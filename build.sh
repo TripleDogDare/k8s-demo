@@ -7,8 +7,9 @@ set -x
 	}
 }
 
+TAG=${1}
 PROJECT_NAME='hello-world'
-IMAGE="gcr.io/$PROJECT_ID/${PROJECT_NAME}:v1"
+IMAGE="gcr.io/$PROJECT_ID/${PROJECT_NAME}:${TAG}"
 
 CGO_ENABLED=0 GOOS=linux go build hello.go
 docker build -t ${IMAGE} .
