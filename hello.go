@@ -21,10 +21,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	response := path.Base(r.URL.Path)
 	if response == "/" {
-		fmt.Fprintf(w, "Hello")
+		fmt.Fprintf(w, "Hello\n")
 		log.Println("Said hello")
 	} else {
-		fmt.Fprintf(w, "Hello, %s", response)
+		fmt.Fprintf(w, "Hello, %s\n", response)
 		log.Println("Said hello to %s", response)
 	}
 }
